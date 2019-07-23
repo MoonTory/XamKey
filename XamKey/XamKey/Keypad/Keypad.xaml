@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamKey.Keypad.Keypad">
+    
+      <!-- Used for styling the Keypad -->
+      <ContentView.Resources>
+          <ResourceDictionary>
+              <Style x:Key="KeypadStyles" TargetType="Button" >
+                  <Setter Property="WidthRequest" Value="80"/>
+                  <Setter Property="HeightRequest" Value="80"/>
+                  <Setter Property="BorderRadius" Value="10"/>
+                  <Setter Property="TextColor" Value="White"/>
+                  <Setter Property="FontSize" Value="36"/>
+              </Style>
+          </ResourceDictionary>
+      </ContentView.Resources>
+    
+      <ContentView.Content>
+            <Grid  Padding="{OnIdiom Phone='7,7', Tablet='13,13'}" RowSpacing="{OnIdiom Phone='5', Tablet='20' }" ColumnSpacing="{OnIdiom Phone='5', Tablet='20'}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Text="0" x:Name="InputText" FontSize="48" FontAttributes="Bold" BackgroundColor="White" TextColor="Black" LineBreakMode="NoWrap" HorizontalTextAlignment="End" VerticalTextAlignment="Center"  Grid.ColumnSpan="3" />
+
+                <Button Clicked="OnNumberSelect" Text="7" Grid.Row="1" Grid.Column="0" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnNumberSelect" Text="8" Grid.Row="1" Grid.Column="1" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnNumberSelect" Text="9" Grid.Row="1" Grid.Column="2" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+
+                <Button Clicked="OnNumberSelect" Text="4" Grid.Row="2" Grid.Column="0" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnNumberSelect" Text="5" Grid.Row="2" Grid.Column="1" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnNumberSelect" Text="6" Grid.Row="2" Grid.Column="2" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+
+                <Button Clicked="OnNumberSelect" Text="1" Grid.Row="3" Grid.Column="0" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnNumberSelect" Text="2" Grid.Row="3" Grid.Column="1" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnNumberSelect" Text="3" Grid.Row="3" Grid.Column="2" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+
+                <Button Clicked="OnBackSelect" Image="ic_back.png" Grid.Row="4" Grid.Column="0" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnNumberSelect" Text="0" Grid.Row="4" Grid.Column="1" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+                <Button Clicked="OnEnterSelect" Image="ic_enter.png" Grid.Row="4" Grid.Column="2" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
+
+            </Grid>
+        </ContentView.Content>
+</ContentView>
