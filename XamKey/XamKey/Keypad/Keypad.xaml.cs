@@ -15,7 +15,7 @@ namespace XamKey.Keypad
     {
         public string ValueText { get; set; }
 
-        public View CustomInput
+        public View CustomView
         {
             get { return (View)GetValue(LabelValueProperty); }
 
@@ -30,9 +30,9 @@ namespace XamKey.Keypad
             .Create(propertyName: "ValueText", returnType: typeof(string), declaringType: typeof(Keypad), defaultValue: "", defaultBindingMode: BindingMode.TwoWay, propertyChanged: HandleValueTextChanged);
 
         public static BindableProperty LabelValueProperty = BindableProperty
-            .Create<Keypad, View>(myView => myView.CustomInput, null, defaultBindingMode: BindingMode.TwoWay, propertyChanged: HandleCustomInputChanged);
+            .Create(propertyName: "CustomView", returnType: typeof(View), declaringType: typeof(Keypad), defaultValue: null, defaultBindingMode: BindingMode.TwoWay, propertyChanged: HandleCustomViewChanged);
 
-        private static void HandleCustomInputChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void HandleCustomViewChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var myView = (Keypad)bindable;
             myView.Container.Content = (View)newValue;
@@ -49,7 +49,6 @@ namespace XamKey.Keypad
             Button button = (Button)sender;
             ValueText = ValueText + button.Text;
             OnPropertyChanged(nameof(ValueText));
-            // InputText.Text = ValueText;
         }
 
         private void OnBackSelect(object sender, EventArgs e)
@@ -62,7 +61,6 @@ namespace XamKey.Keypad
             string newText = ValueText.Remove(ValueText.Length - 1, 1);
             ValueText = newText;
             OnPropertyChanged(nameof(ValueText));
-            // InputText.Text = ValueText;
         }
 
         private async void OnEnterSelect(object sender, EventArgs e)
@@ -70,7 +68,6 @@ namespace XamKey.Keypad
             await App.Current.MainPage.DisplayAlert("Valor", ValueText, "OK");
             ValueText = "";
             OnPropertyChanged(nameof(ValueText));
-            // InputText.Text = ValueText;
         }
 
         static class Constants

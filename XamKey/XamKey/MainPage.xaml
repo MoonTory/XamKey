@@ -6,9 +6,9 @@
     <ContentPage.Content>
         <StackLayout>
             <local:Keypad ValueText="{Binding ValueText}" x:Name="XamKeypad" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-                <local:Keypad.CustomInput>
+                <local:Keypad.CustomView>
                     <Label Text="{Binding ValueText}" x:Name="InputText" FontSize="48" FontAttributes="Bold" BackgroundColor="White" TextColor="Black" LineBreakMode="NoWrap" VerticalTextAlignment="Center"  />
-                </local:Keypad.CustomInput>
+                </local:Keypad.CustomView>
             </local:Keypad>
         </StackLayout>
     </ContentPage.Content>
