@@ -17,7 +17,7 @@
       </ContentView.Resources>
     
       <ContentView.Content>
-            <Grid  Padding="{OnIdiom Phone='7,7', Tablet='13,13'}" RowSpacing="{OnIdiom Phone='5', Tablet='20' }" ColumnSpacing="{OnIdiom Phone='5', Tablet='20'}" >
+            <Grid Padding="{OnIdiom Phone='5,5', Tablet='13,13'}" RowSpacing="{OnIdiom Phone='5', Tablet='20' }" ColumnSpacing="{OnIdiom Phone='5', Tablet='20'}" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3*" />
                     <RowDefinition Height="*" />
@@ -32,7 +32,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Label Text="0" x:Name="InputText" FontSize="48" FontAttributes="Bold" BackgroundColor="White" TextColor="Black" LineBreakMode="NoWrap" HorizontalTextAlignment="End" VerticalTextAlignment="Center"  Grid.ColumnSpan="3" />
+                <Label x:Name="InputText" FontSize="48" FontAttributes="Bold" BackgroundColor="White" TextColor="Black" LineBreakMode="NoWrap" VerticalTextAlignment="Center"  Grid.ColumnSpan="3" />
 
                 <Button Clicked="OnNumberSelect" Text="7" Grid.Row="1" Grid.Column="0" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>
                 <Button Clicked="OnNumberSelect" Text="8" Grid.Row="1" Grid.Column="1" BackgroundColor="#2e2e2e" Style="{StaticResource KeypadStyles}"/>

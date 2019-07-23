@@ -11,7 +11,7 @@ namespace XamKey
         {
             InitializeComponent();
 
-            MainPage = new Keypad.Keypad();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
