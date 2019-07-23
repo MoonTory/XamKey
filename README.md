@@ -14,7 +14,7 @@ The _"Keypad"_ component exposes a _"CustotmInput"_ property where you can rende
     <ContentPage.Content>
         <StackLayout>
             <!-- Render XamKey:Keypad -->
-            <local:Keypad ValueText="{Binding ValueText}" x:Name="XamKeypad" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
+            <local:Keypad x:Name="XamKeypad" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
                 <local:Keypad.CustomInput>
                     <!-- Here you can declare your Custom Input View -->
                     <Label Text="{Binding ValueText}" x:Name="InputText" FontSize="48" FontAttributes="Bold" BackgroundColor="White" TextColor="Black" LineBreakMode="NoWrap" VerticalTextAlignment="Center"  />
