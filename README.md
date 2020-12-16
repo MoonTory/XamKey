@@ -1,10 +1,10 @@
 # XamKey
 
-Custom Xamarin Forms numeric keypad with custom input support!
+Custom Xamarin Forms numeric keypad with custom view support!
 
 ## Usage
 
-The _"Keypad"_ component exposes a _"CustotmInput"_ property where you can render a custom view for the Label.
+The _"Keypad"_ component exposes a _"CustomView"_ property where you can render a custom view for the Label.
 
 ```xml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
